@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/mainPage"
+    android:background="@drawable/big_red_barn_art"
+    android:baselineAligned="false"
+    android:measureWithLargestChild="false"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/conTitle"
+        android:layout_weight="5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:layout_gravity="top|center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/country_skillets_logo" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:id="@+id/conRita"
+            android:paddingLeft="5dp"
+            android:baselineAligned="false">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/powered_by"
+                android:id="@+id/lblPowered"
+                android:textSize="16sp"
+                android:textColor="#80ffffff"
+                android:layout_gravity="right"
+                android:layout_marginRight="50dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rita"
+                android:id="@+id/lblRita"
+                android:textSize="24sp"
+                android:textColor="#ffff0000"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationsList"
+            android:layout_gravity="top" />
+
+        <Button
+            android:text="@string/btn_vendors"
+            android:id="@+id/btnVendors"
+            android:onClick="gotoVendorsActivity"
+            android:layout_marginTop="20dp"
+            style="@style/btnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/flistLocationEditBox"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:id="@+id/linearLayout3" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/flistEditLocationNameField" >
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:id="@+id/flistEditLocationName"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#ffffffff"
+                        android:text="Location"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:id="@+id/flistEditLocationNameLbl"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:id="@+id/flistEditLocationImageIdField" >
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/flistEditLocationImageId"
+                        android:textSize="18sp"
+                        android:layout_weight="1.5"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#ffffffff"
+                        android:text="Image ID"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Image ID"
+                        android:id="@+id/flistEditLocationImageIdLbl"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="32dp"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2.5dp"
+                android:baselineAligned="false"
+                android:id="@+id/linearLayout9" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout7"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2.5dp" >
+
+                    <Button
+                        style="@style/btnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_edit_selected"
+                        android:id="@+id/button"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="2.5dp" />
+
+                    <Button
+                        style="@style/btnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_remove_selected"
+                        android:id="@+id/button2"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="2.5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout8"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <Button
+                        style="@style/btnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_clear_fields"
+                        android:id="@+id/button3"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="2.5dp" />
+
+                    <Button
+                        style="@style/btnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_add_new_entry"
+                        android:id="@+id/button4"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="2.5dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                style="@style/btnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_cancel"
+                android:id="@+id/button5"
+                android:textSize="16sp"
+                android:layout_marginTop="2.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

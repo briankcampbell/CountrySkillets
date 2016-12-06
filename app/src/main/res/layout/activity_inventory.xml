@@ -1,0 +1,370 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.poweredbyrita.countryskillets.InventoryActivity"
+    android:orientation="vertical"
+    android:id="@+id/inventoryBackground"
+    android:background="@drawable/big_red_barn_art"
+    android:focusableInTouchMode="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameReport">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/inventoryContent">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/borderInventoryTitle"
+                android:background="#ff000000"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/title_activity_inventory"
+                    android:id="@+id/titleInventory"
+                    android:textSize="50sp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold|italic"
+                    android:textColor="#ffffffff"
+                    android:typeface="serif"
+                    android:background="#af820000"
+                    android:paddingBottom="15dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inventoryLocation"
+                    android:textSize="28sp"
+                    android:textColor="#ffffffff"
+                    android:typeface="serif"
+                    android:text="@string/restaurant_location" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#af820000"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/boxInventoryAction">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_show_inventory_summary"
+                        android:id="@+id/btnSummary"
+                        style="@style/btnStyle"
+                        android:background="#FF333333"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:typeface="sans"
+                        android:visibility="gone" />
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/itemSearchFilter" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/flItemEditFrame">
+
+                <ExpandableListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expandableItemsList"
+                    android:background="#00820000"
+                    android:layout_gravity="top"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/flItemEditBox"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:id="@+id/flItemEditNameGroupRow">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:id="@+id/flItemEditNameBox">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:id="@+id/flItemEditName"
+                                android:editable="true"
+                                android:textSize="18sp"
+                                android:layout_weight="1"
+                                android:textColor="#ffffffff"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:selectAllOnFocus="true"
+                                android:inputType="text"
+                                android:text="@string/name"
+                                android:paddingLeft="10dp"
+                                android:imeOptions="actionNext"
+                                android:nextFocusRight="@+id/flItemEditGroup" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/name"
+                                android:id="@+id/flItemEditNameLbl"
+                                android:textColor="#ffffffff"
+                                android:textSize="14sp"
+                                android:paddingLeft="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:id="@+id/flItemEditGroupBox">
+
+                            <AutoCompleteTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flItemEditGroup"
+                                android:textColor="#ffffffff"
+                                android:text="@string/group"
+                                android:layout_marginLeft="32dp"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:imeOptions="actionNext"
+                                android:nextFocusDown="@+id/flItemEditVendor"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/group"
+                                android:id="@+id/flItemEditGroupLbl"
+                                android:textColor="#ffffffff"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="32dp"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/flItemEditVendor"
+                        android:textSize="18sp"
+                        android:textColor="#ffffffff"
+                        android:text="@string/vendor"
+                        android:paddingLeft="10dp"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@+id/flItemEditLocation" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vendor"
+                        android:id="@+id/flItemEditVendorLbl"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp"
+                        android:paddingLeft="10dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:id="@+id/flItemEditLocationCountRow">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:id="@+id/flItemEditLocationBox">
+
+                            <AutoCompleteTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:id="@+id/flItemEditLocation"
+                                android:layout_weight="1"
+                                android:textSize="18sp"
+                                android:layout_marginRight="10dp"
+                                android:textColor="#ffffffff"
+                                android:text="@string/location"
+                                android:paddingLeft="10dp"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:imeOptions="actionNext"
+                                android:nextFocusRight="@+id/flItemEditCount"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/location"
+                                android:id="@+id/flItemEditLocationLbl"
+                                android:textColor="#ffffffff"
+                                android:textSize="14sp"
+                                android:paddingLeft="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:id="@+id/flEditCountField"
+                            android:gravity="center_horizontal">
+
+                            <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:ems="10"
+                                android:id="@+id/flItemEditCount"
+                                android:textSize="18sp"
+                                android:textColor="#ffffffff"
+                                android:text="@string/item_count"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"
+                                android:gravity="center_horizontal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/count"
+                                android:id="@+id/flItemEditCountLbl"
+                                android:textColor="#ffffffff"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2.5dp"
+                        android:baselineAligned="false"
+                        android:id="@+id/flEditItemButtonBox"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/flItemEditButtons"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center|center_horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="2.5dp">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/btn_edit_selected"
+                                android:id="@+id/flItemEditBtn"
+                                style="@style/btnStyle"
+                                android:textSize="16sp"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="2.5dp" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/btn_remove_selected"
+                                android:id="@+id/flItemRemoveBtn"
+                                style="@style/btnStyle"
+                                android:textSize="16sp"
+                                android:layout_weight="1"
+                                android:layout_marginTop="2.5dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/flItemAddButtons"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="2.5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_horizontal">
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/btn_clear_fields"
+                                android:id="@+id/flItemClearValuesBtn"
+                                style="@style/btnStyle"
+                                android:textSize="16sp"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="2.5dp" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/btn_add_new_entry"
+                                android:id="@+id/flItemAddBtn"
+                                style="@style/btnStyle"
+                                android:textSize="16sp"
+                                android:layout_weight="1"
+                                android:layout_marginTop="2.5dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_cancel"
+                        android:id="@+id/btnCancelEditItem"
+                        style="@style/btnStyle"
+                        android:textSize="16sp"
+                        android:layout_marginTop="2.5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

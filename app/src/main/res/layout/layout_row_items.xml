@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lriBackground"
+    android:background="#00000000">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lriBorder"
+        android:background="#00000000"
+        android:padding="5dp" >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/lriContent"
+            android:gravity="center_vertical"
+            android:background="#00820000"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item"
+                android:id="@+id/lriItem"
+                android:textSize="24sp"
+                android:typeface="serif"
+                android:textColor="#ff000000"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:background="#ffffffff"
+                android:padding="5dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/btn_minus"
+                android:id="@+id/btnMinus"
+                android:textSize="28sp"
+                android:textColor="#ffffffff"
+                android:background="#ff000000"
+                android:clickable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_count"
+                android:id="@+id/lriCount"
+                android:textSize="24sp"
+                android:typeface="serif"
+                android:textColor="#ff000000"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:background="#ffffffff"
+                android:padding="5dp"
+                />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/btn_plus"
+                android:id="@+id/btnPlus"
+                android:textSize="28sp"
+                android:textColor="#ffffffff"
+                android:background="#ff000000"
+                android:clickable="true" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:id="@+id/lrcRow">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/group"
+        android:id="@+id/lrcGroupName"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:linksClickable="true"
+        android:background="#0000"
+        android:textColor="#ff000000" />
+</LinearLayout>

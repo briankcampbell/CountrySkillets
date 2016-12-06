@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.poweredbyrita.countryskillets.VendorsActivity"
+    android:orientation="vertical"
+    android:id="@+id/vendorsBackground"
+    android:background="@drawable/big_red_barn">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#78000000">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/vendorsTitleBorder"
+            android:background="#ff000000"
+            android:layout_marginBottom="100dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_activity_vendors"
+                android:id="@+id/vendorsTitle"
+                android:textSize="50sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold|italic"
+                android:typeface="serif"
+                android:textColor="#ffffffff"
+                android:background="#af820000"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:id="@+id/flistEditVendorFrame">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vendorsList"
+                android:background="#00ffffff" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/flistEditVendorBox"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:id="@+id/flistEditVendorRow" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/flistEditVendorNameContainer" >
+
+                        <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:id="@+id/flistEditVendorName"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="#ffffffff"
+                            android:text="Vendor"
+                            android:paddingLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vendor Name"
+                            android:id="@+id/flistEditVendorNameLbl"
+                            android:textColor="#ffffffff"
+                            android:textSize="14sp"
+                            android:paddingLeft="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:id="@+id/flistEditVendorPhoneContainer" >
+
+                        <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/flistEditVendorPhone"
+                            android:textSize="18sp"
+                            android:layout_weight="1.5"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="#ffffffff"
+                            android:text="@string/phone"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            android:inputType="number" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone Number"
+                            android:id="@+id/flistEditVendorPhoneLbl"
+                            android:textColor="#ffffffff"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="32dp"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2.5dp"
+                    android:baselineAligned="false"
+                    android:id="@+id/flistEditVendorButtonContainer" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/flistEditVendorEditRemoveBtnsContainer"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="2.5dp" >
+
+                        <Button
+                            style="@style/btnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_edit_selected"
+                            android:id="@+id/flistEditVendorEditBtn"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="2.5dp" />
+
+                        <Button
+                            style="@style/btnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_remove_selected"
+                            android:id="@+id/flistEditVendorRemoveBtn"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="2.5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/flistEditVendorAddBtnsContainer"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_marginRight="5dp" >
+
+                        <Button
+                            style="@style/btnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_clear_fields"
+                            android:id="@+id/flistEditVendorClearBtn"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="2.5dp" />
+
+                        <Button
+                            style="@style/btnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_add_new_entry"
+                            android:id="@+id/flistEditVendorAddBtn"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="2.5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    style="@style/btnStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_cancel"
+                    android:id="@+id/flistEditVendorCancelBtn"
+                    android:textSize="16sp"
+                    android:layout_marginTop="2.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
